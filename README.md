@@ -1,18 +1,18 @@
 # NagiosXI-ServiceNow-EventHandler
 On-State-Change event handler that will create a service now incident and post the sysid as an ack to the NagiosXi event.
 
-##Handler Usage
+## Handler Usage
 
 ###URL
 1. NagiosXI NRDP URL
 2. ServiceNow URL
 
-###Credentials
+### Credentials
 1. ServiceNow Credentials
 2. NagiosXI MySQL
 3. NagiosXI NRDP key
 
-###General Usage
+### General Usage
 1. Uoload the handler to the "/usr/local/nagios/libexec" directory
 2. chmod +x nagiosxi-snow-hander.php
 3. Create the command for the handler in the Xi interface
