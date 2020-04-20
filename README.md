@@ -4,13 +4,21 @@ On-State-Change event handler that will create a service now incident and post t
 ## Handler Usage
 
 ### URL
-1. NagiosXI NRDP URL
-2. ServiceNow URL
+1. ServiceNow URL
+Create a develper account on developer.servicenow.com
 
 ### Credentials
-1. ServiceNow Credentials
-2. NagiosXI MySQL
-3. NagiosXI NRDP key
+1. In the handler edit ServiceNow Credentials
+  Lines 102-104
+    $uname = "snusername";
+    $upass = "snpassword";
+    $url = 'https://<SNOW-URL>/api/now/table/incident';
+
+2. In the handler edit the NagiosXI MySQL info
+  Line 157
+    $link = mysqli_connect("<hostname/localhost>", "<dbuser>", "<dbpassword>", "<dbname>");
+  Line 186
+    $link = mysqli_connect("<hostname/localhost>", "<dbuser>", "<dbpassword>", "<dbname>");
 
 ### General Usage
 1. Uoload the handler to the "/usr/local/nagios/libexec" directory
