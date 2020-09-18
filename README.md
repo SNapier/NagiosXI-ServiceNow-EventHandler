@@ -1,5 +1,5 @@
 # NagiosXI-ServiceNow-EventHandler
-On-State-Change event handler that will create a ServiceNow incident and post the resulting SysID as a sticky acknowledgement to the NagiosXi Service/Host event.
+On-State-Change event handler that will create a ServiceNow incident and post the resulting SysID as a sticky acknowledgement to the NagiosXi Service event.
 
 
 ## Context
