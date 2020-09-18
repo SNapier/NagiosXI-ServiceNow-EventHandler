@@ -6,11 +6,17 @@ I wanted a method that coupld be applied either on-demand or globaly to NagiosXI
 
 ## Criteria 
 This method needed to include logic for basic filtering that could be applied as a part of the alarm gorvernance strategy to be applied globaly.
+
 This method needed to be independent of the Notification methods in NagiosXI to reduce toil in contact management and foster least priviledge access practices.
+
 This method would provide for On State Change logics to automatically determine the event type to forward to ServiceNow.
+
 This methos would provide a deduplication key to be forwarded to ServiceNow as part of the alarm governance strategy.
+
 This method would use the ServiceNow Glide API to create incidents within my chosen ServiceNow instance.
+
 This method would temporarily store the ServiceNow Incient SysID to provide future updates to ServiceNow incidents.
+
 This method would provide for escalation, demotion and auto-resolution of ServiceNow incidents.
 
 ## Implementing the NagiosXI-Servicenow-EventHandler
