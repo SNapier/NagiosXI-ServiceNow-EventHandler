@@ -66,7 +66,9 @@ This is accomplished by editing the nagios.cfg entry for the global service even
 Please take note;
 
 NOT FOR BEGINNERS!
+
 THIS IS A GLOBAL CHANGE AND APPLIES TO ALL SERVICE CHECKS (THIS MEANS LOGS TOO)! 
+
 
 1. Comment out the existing entry under GLOBAL EVENT HANDLERS
 #global_service_event_handler=xi_service_event_handler
