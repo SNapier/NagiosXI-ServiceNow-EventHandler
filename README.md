@@ -1,8 +1,10 @@
 # NagiosXI-ServiceNow-EventHandler
 On-State-Change event handler that will create a ServiceNow incident and post the resulting SysID as a sticky acknowledgement to the NagiosXi Service/Host event.
 
+
 ## Context
 I wanted a method that coupld be applied either on-demand or globaly to NagiosXI that would allow for me to use ServiceNow as the Incident Management platform for service checks while allowing me to keep the Host Notification and escalation within the umbrella of NagiosXI.
+
 
 ## Criteria 
 This method needed to include logic for basic filtering that could be applied as a part of the alarm gorvernance strategy to be applied globaly.
@@ -19,10 +21,14 @@ This method would temporarily store the ServiceNow Incient SysID to provide futu
 
 This method would provide for escalation, demotion and auto-resolution of ServiceNow incidents.
 
+
 ## Implementing the NagiosXI-Servicenow-EventHandler
-This worked for me and is intended as an example for use within a development environment only. 
+This worked for me and is intended as an example for use within a development environment only.
+
 This handler does not provide for any secrets management.
+
 The "Then a miricale happens" step is implied.
+
 
 ### Your ServiceNow URL
 1. ServiceNow Instance URL
