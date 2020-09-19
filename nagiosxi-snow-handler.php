@@ -192,7 +192,7 @@ function ack_sys_id($meta){
 
         $etime = date('Y-m-d H:i:s');
         $etime_day = gettimeofday();
-        $sql="INSERT INTO nagios_acknowledgements (acknowledgement_id, instance_id, entry_time, entry_time_usec, acknowledgement_type, object_id, state, author_name, comment_data, is_sticky, persistent_comment, notify_contacts) VALUES (0, 1, '".$etime."', '".$etime_day['usec']."', 1, ".$meta['obj_id'].", ".$meta['servicestateid'].", 'Nagios Administrator', '".$meta['sys_id']."', 1, 0, 0)";
+        $sql="INSERT INTO nagios_acknowledgements (acknowledgement_id, instance_id, entry_time, entry_time_usec, acknowledgement_type, object_id, state, author_name, comment_data, is_sticky, persistent_comment, notify_contacts) VALUES ("", 1, '".$etime."', '".$etime_day['usec']."', 1, ".$meta['obj_id'].", ".$meta['servicestateid'].", 'Nagios Administrator', '".$meta['sys_id']."', 1, 0, 0)";
         if($res = mysqli_query($link, $sql)){
                 $ret = true;
         } else{
