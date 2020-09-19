@@ -1,7 +1,7 @@
 #!/usr/bin/php -q
 <?php
 // Nagios to Service Now Glide API Incident Creation
-// Version 0.0.19
+// Version 0.0.20
 // Created by Sam Napier
 
 define('CFG_ONLY', 1);
