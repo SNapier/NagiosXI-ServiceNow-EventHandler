@@ -36,17 +36,17 @@ The handler uses the ServiceNow Glide API to create the incident. I reccomend th
 
 ### Supply ServiceNow Credentials
 1. In the handler edit ServiceNow Credentials
-  Lines 102-104
-    $uname = "snusername";
-    $upass = "snpassword";
-    $url = 'https://<SNOW-URL>/api/now/table/incident';
+  Replace all occurrences of
+    `
+    $uname = "<snowusername>";
+    $upass = "<snowpassword>";
+    $url = 'https://<snowurl>/api/now/table/incident';
+    `
 
 ### Your NagiosXI MySQL Credentials
-1. In the handler edit the NagiosXI MySQL info
-  Line 157
-    $link = mysqli_connect("<hostname/localhost>", "<dbuser>", "<dbpassword>", "<dbname>");
-  Line 186
-    $link = mysqli_connect("<hostname/localhost>", "<dbuser>", "<dbpassword>", "<dbname>");
+1. In the handler all mysql credential as those of the default NagiosXI install. Update all instances for your environment. 
+    `$link = mysqli_connect("<hostname/localhost>", "root", "nagiosxi", "nagios");`
+
 
 ### NagiosXI Handler Prep
 1. Upload the handler to the "/usr/local/nagios/libexec" directory
@@ -56,7 +56,7 @@ The handler uses the ServiceNow Glide API to create the incident. I reccomend th
 5. Enable needed macros within NagiosXI
 6. Create the nagiosxi-snow-handler command in NagiosXI
 
-/usr/bin/php /usr/local/nagios/libexec/nagiosxi-snow-handler.php --handler-type=service --host="$HOSTNAME$" --service="$SERVICEDESC$" --hostaddress="$HOSTADDRESS$" --hoststate=$HOSTSTATE$ --hoststateid=$HOSTSTATEID$ --hosteventid=$HOSTEVENTID$ --hostproblemid=$HOSTPROBLEMID$ --servicestate=$SERVICESTATE$ --servicestateid=$SERVICESTATEID$ --lastservicestate=$LASTSERVICESTATE$ --lastservicestateid=$LASTSERVICESTATEID$ --lastserviceeventid=$LASTSERVICEEVENTID$ --lastserviceproblemid=$LASTSERVICEPROBLEMID$ --servicestatetype=$SERVICESTATETYPE$ --currentattempt=$SERVICEATTEMPT$ --maxattempts=$MAXSERVICEATTEMPTS$ --serviceeventid=$SERVICEEVENTID$ --serviceproblemid=$SERVICEPROBLEMID$ --serviceoutput="$SERVICEOUTPUT$" --longserviceoutput="$LONGSERVICEOUTPUT$" --servicedowntime=$SERVICEDOWNTIME$ --serviceackcomment="$SERVICEACKCOMMENT$""
+/usr/bin/php /usr/local/nagios/libexec/nagiosxi-snow-handler.php --handler-type=service --host="$HOSTNAME$" --service="$SERVICEDESC$" --hostaddress="$HOSTADDRESS$" --hoststate=$HOSTSTATE$ --hoststateid=$HOSTSTATEID$ --hosteventid=$HOSTEVENTID$ --hostproblemid=$HOSTPROBLEMID$ --servicestate=$SERVICESTATE$ --servicestateid=$SERVICESTATEID$ --lastservicestate=$LASTSERVICESTATE$ --lastservicestateid=$LASTSERVICESTATEID$ --lastserviceeventid=$LASTSERVICEEVENTID$ --lastserviceproblemid=$LASTSERVICEPROBLEMID$ --servicestatetype=$SERVICESTATETYPE$ --currentattempt=$SERVICEATTEMPT$ --maxattempts=$MAXSERVICEATTEMPTS$ --serviceeventid=$SERVICEEVENTID$ --serviceproblemid=$SERVICEPROBLEMID$ --serviceoutput="$SERVICEOUTPUT$" --longserviceoutput="$LONGSERVICEOUTPUT$" --servicedowntime=$SERVICEDOWNTIME$
 
 ### NagiosXI Handler Deployment Methods
 There are two basic strategies for using this event handler as part of your event routing pipe-line.
