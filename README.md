@@ -21,13 +21,27 @@ This method would temporarily store the ServiceNow Incient SysID to provide futu
 
 This method would provide for escalation, demotion and auto-resolution of ServiceNow incidents.
 
+## NagiosXI Service Naming Convention
+Within my Nagios deployments I implement a naming convention consisting of four fields sepperated with double tacks.
+
+`<os>--<class>--<category>--<descriptor>`
+
+I have used this convention within the handler, service names not following this standard will not produce the expected results.
+
+
+###This convention can be extended to provide for severity base event handling by adding the severity to forward to the naming convention and adding the needed code for processing within the Alert, Escalate, Downgrade, Duplicate functions.
+
+`<os>--<class>--<category>--<forwardingseverity>--<descriptor>` 
+
+Within the handler I am able to parse these values to easily add judgement calls and more complex routing logic.
+
 
 ## Implementing the NagiosXI-Servicenow-EventHandler
 This worked for me and is intended as an example for use within a development environment only.
 
 This handler does not provide for any secrets management.
 
-The "Then a miricale happens" step is implied.
+The "Then a miracle happens" step is implied.
 
 
 ### Your ServiceNow URL
